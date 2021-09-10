@@ -16,14 +16,17 @@ h1 {
     margin-top: 5rem;
     font-size: 1rem;
     display: flex;
+    height: 5rem;
     width: 20rem;
     border-style: solid;
-    border-color: grey;
+    border-color: #681d68;
     color: #a562c7;
 }
 
 .evidence:hover {
     background-color: #a562c7;
+    width: 20.5rem;
+    height: 5.5rem;
     color: #15152b;
 }
 
