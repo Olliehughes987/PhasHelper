@@ -1,0 +1,40 @@
+html {
+    background-color: #15152b;
+}
+
+h1 {
+    color: #681d68;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.evidence {
+    margin-top: 5rem;
+    font-size: 1rem;
+    display: flex;
+    width: 20rem;
+    border-style: solid;
+    border-color: grey;
+    color: #a562c7;
+}
+
+.evidence:hover {
+    background-color: #a562c7;
+    color: #15152b;
+}
+
+.evidence img {
+    width: 5rem;
+    height: 5rem;
+    padding-right: 1rem;
+}
+
+.content, .content h2, .content p{
+    margin: 0.2em 0 0.2em 0;
+    width: 15rem;
+    padding: 0;
+}

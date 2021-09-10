@@ -1,0 +1,13 @@
+
+
+
+
+.evidence {
+    font-size: 1rem;
+    display: flex;
+}
+
+.evidence img {
+    width: 5rem;
+    height: 5rem;
+}
