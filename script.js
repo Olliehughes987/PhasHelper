@@ -19,6 +19,12 @@ const Ghosts = [
 ];
 
 
+function populateList() {
+    Ghosts.forEach(Ghost => {
+        document.getElementById("ghostList").innerHTML += Ghost.name + " ";
+    });
+}
+
 window.addEventListener('load', () => {
-    console.log(Ghosts);
+    populateList();
 })
