@@ -12,7 +12,7 @@
         <h1>Phasmophobia Helper</h1>
       </div>
       <div class="container">
-        <div name="emf" class="evidence" onclick="updateEvidence()">
+        <div id="emf" class="evidence" onclick="emfToggle()">
           <img src="images/emfReader.png">
           <div class="content">
             <h2>EMF Level 5</h2>
@@ -20,7 +20,7 @@
           </div>
         </div>
 
-        <div name="spiritBox" class="evidence">
+        <div id="spiritBox" class="evidence" onclick="spiritBoxToggle()">
           <img src="images/spiritbox.png">
           <div class="content">
             <h2>Spirit Box</h2>
@@ -28,7 +28,7 @@
           </div>
         </div>
 
-        <div name="ghostWriting" class="evidence">
+        <div id="ghostWriting" class="evidence" onclick="writingToggle()">
           <img src="images/ghostWriting.png">
           <div class="content">
             <h2>Ghost Writing</h2>
@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div name="ghostOrbs" class="evidence">
+        <div id="ghostOrbs" class="evidence" onclick="orbsToggle()">
           <img src="images/orbs.png">
           <div class="content">
             <h2>Ghost Orbs</h2>
@@ -44,7 +44,7 @@
           </div>
         </div>
 
-        <div name="fingerprints" class="evidence">
+        <div id="fingerprints" class="evidence" onclick="printsToggle()">
           <img src="images/fingerprint.png">
           <div class="content">
             <h2>Fingerprints</h2>
@@ -52,7 +52,7 @@
           </div>
         </div>
 
-        <div name="freezing" class="evidence">
+        <div id="freezing" class="evidence" onclick="freezingToggle()">
           <img src="images/tempGun.png">
           <div class="content">
             <h2>Freezing Temps</h2>
@@ -60,14 +60,16 @@
           </div>
         </div>
 
-        <div name="D.O.T.S" class="evidence">
+        <div id="D.O.T.S" class="evidence" onclick="dotsToggle()">
           <img src="images/dots.svg">
           <div class="content">
             <h2>D.O.T.S projector</h2>
             <p>Ghost visible during D.O.T.S</p>
           </div>
         </div>
-        
+      </div>
+      <div class="Container">
+        <p id="ghostList"></p>
       </div>
     </main>
     <script src="script.js"></script>

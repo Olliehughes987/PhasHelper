@@ -41,3 +41,13 @@ h1 {
     width: 15rem;
     padding: 0;
 }
+
+#ghostList {
+    color: darkgray;
+}
+
+
+.ghostList {
+    display: flex;
+    max-width: 25rem;
+}
