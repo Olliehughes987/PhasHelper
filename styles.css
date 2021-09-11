@@ -18,16 +18,21 @@ h1 {
     display: flex;
     height: 5rem;
     width: 20rem;
-    border-style: solid;
-    border-color: #681d68;
+    background-color: #1e1e3f;
+    border-radius: 60px;
+    background: linear-gradient(145deg, #0b0b17, #0d0d1c);
+    box-shadow:  20px 20px 26px #06060e,
+                 -20px -20px 26px #121226;
     color: #a562c7;
 }
 
 .evidence:hover {
     background-color: #a562c7;
-    width: 20.5rem;
-    height: 5.5rem;
-    color: #15152b;
+    border-radius: 60px;
+    background: #0c0c1a;
+    box-shadow: inset 14px 14px 32px #06060e,
+                inset -14px -14px 32px #121226;
+    color: #a562c7d0;
 }
 
 
