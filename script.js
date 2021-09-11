@@ -32,16 +32,33 @@ function evidenceFilter(evid) {
 }
 
 function calculateList(currentList) {
-    if(selectedEvidence.length != 0) {
-        // if evidence is selected
-        selectedEvidence.forEach(Piece => {
-            currentList = Ghosts.filter(Ghost => Ghost.evidence.includes(Piece));
-            //append the ghostList with all evidence selected
-        });
-        populateList(currentList);
-    } else {
-        populateList(Ghosts);
+    switch(selectedEvidence.length) {
+        case 0:
+            populateList(Ghosts);
+            break;
+        case 1:
+            selectedEvidence.forEach(Piece => {
+                currentList = Ghosts.filter(Ghost => Ghost.evidence.includes(selectedEvidence[0]));
+            });
+            console.log(currentList);
+            populateList(currentList);
+            break;
+        case 2:
+            selectedEvidence.forEach(Piece => {
+                currentList = Ghosts.filter(Ghost => Ghost.evidence.includes(selectedEvidence[0]) && Ghost.evidence.includes(selectedEvidence[1]));
+            });
+            console.log(currentList);
+            populateList(currentList);
+            break;
+        case 3:
+            selectedEvidence.forEach(Piece => {
+                currentList = Ghosts.filter(Ghost => Ghost.evidence.includes(selectedEvidence[0]) && Ghost.evidence.includes(selectedEvidence[1]) && Ghost.evidence.includes(selectedEvidence[2]));
+            });
+            console.log(currentList);
+            populateList(currentList);
+            break;
     }
+
 }
 
 function populateList(currentList) {
