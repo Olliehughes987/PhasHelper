@@ -1,6 +1,6 @@
 html {
     font-family: 'Kiwi Maru', serif;
-    background-color: #15152b;
+    background-color: #0c0c1a;
 }
 
 h1 {
@@ -22,18 +22,19 @@ h1 {
     background-color: #1e1e3f;
     border-radius: 60px;
     background: linear-gradient(145deg, #0b0b17, #0d0d1c);
-    box-shadow:  20px 20px 26px #06060e,
-                 -20px -20px 26px #121226;
+    box-shadow:  9px 9px 10px #05050c,
+                 -9px -9px 10px #131328;
     color: #a562c7;
 }
 
 .evidence--selected {
     background-color: #a562c7;
     border-radius: 60px;
+    border-radius: 60px;
     background: #0c0c1a;
-    box-shadow: inset 14px 14px 32px #06060e,
-                inset -14px -14px 32px #121226;
-    color: #a562c7d0;
+    box-shadow: inset 15px 15px 14px #05050c,
+                inset -15px -15px 14px #131328;
+    color: #b11e80;
 }
 
 
