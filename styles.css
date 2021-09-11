@@ -27,7 +27,7 @@ h1 {
     color: #a562c7;
 }
 
-.evidence:hover {
+.evidence--selected {
     background-color: #a562c7;
     border-radius: 60px;
     background: #0c0c1a;

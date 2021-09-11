@@ -27,7 +27,6 @@ function evidenceFilter(evid) {
     } else if(selectedEvidence.includes(evid)){
         selectedEvidence = selectedEvidence.filter(piece => piece != evid);
     }
-    console.log(selectedEvidence);
     calculateList(validGhosts); 
 }
 
@@ -40,21 +39,18 @@ function calculateList(currentList) {
             selectedEvidence.forEach(Piece => {
                 currentList = Ghosts.filter(Ghost => Ghost.evidence.includes(selectedEvidence[0]));
             });
-            console.log(currentList);
             populateList(currentList);
             break;
         case 2:
             selectedEvidence.forEach(Piece => {
                 currentList = Ghosts.filter(Ghost => Ghost.evidence.includes(selectedEvidence[0]) && Ghost.evidence.includes(selectedEvidence[1]));
             });
-            console.log(currentList);
             populateList(currentList);
             break;
         case 3:
             selectedEvidence.forEach(Piece => {
                 currentList = Ghosts.filter(Ghost => Ghost.evidence.includes(selectedEvidence[0]) && Ghost.evidence.includes(selectedEvidence[1]) && Ghost.evidence.includes(selectedEvidence[2]));
             });
-            console.log(currentList);
             populateList(currentList);
             break;
     }
@@ -69,5 +65,14 @@ function populateList(currentList) {
 }
 
 window.addEventListener('load', () => {
+    let evidences = document.querySelectorAll("div.evidence");
+    evidences.forEach(ev => {
+        ev.addEventListener('click', event => {
+            if(document.querySelectorAll("div.evidence--selected").length < 3 || ev.className == "evidence evidence--selected") {
+                ev.classList.toggle('evidence--selected');
+            }
+            console.log(document.querySelectorAll("div.evidence--selected").length);
+          });
+    });
     populateList(Ghosts);
 })
