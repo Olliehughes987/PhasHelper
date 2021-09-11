@@ -18,13 +18,39 @@ const Ghosts = [
 
 ];
 
+let validGhosts = [];
+let selectedEvidence = [];
 
-function populateList() {
-    Ghosts.forEach(Ghost => {
+function evidenceFilter(evid) {
+    if(selectedEvidence.length < 3 && !selectedEvidence.includes(evid)) {
+        selectedEvidence.push(evid);
+    } else if(selectedEvidence.includes(evid)){
+        selectedEvidence = selectedEvidence.filter(piece => piece != evid);
+    }
+    console.log(selectedEvidence);
+    calculateList(validGhosts); 
+}
+
+function calculateList(currentList) {
+    if(selectedEvidence.length != 0) {
+        // if evidence is selected
+        selectedEvidence.forEach(Piece => {
+            currentList = Ghosts.filter(Ghost => Ghost.evidence.includes(Piece));
+            //append the ghostList with all evidence selected
+        });
+        populateList(currentList);
+    } else {
+        populateList(Ghosts);
+    }
+}
+
+function populateList(currentList) {
+    document.getElementById("ghostList").innerHTML = "Ghosts: ";
+    currentList.forEach(Ghost => {
         document.getElementById("ghostList").innerHTML += Ghost.name + " ";
     });
 }
 
 window.addEventListener('load', () => {
-    populateList();
+    populateList(Ghosts);
 })
