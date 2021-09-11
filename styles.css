@@ -27,15 +27,6 @@ h1 {
     color: #a562c7;
 }
 
-.evidence--selected {
-    background-color: #a562c7;
-    border-radius: 60px;
-    border-radius: 60px;
-    background: #0c0c1a;
-    box-shadow: inset 15px 15px 14px #05050c,
-                inset -15px -15px 14px #131328;
-    color: #b11e80;
-}
 
 
 .evidence img {
@@ -53,4 +44,20 @@ h1 {
 #ghostList {
     padding-top: 2rem;
     color: darkgray;
+}
+
+.evidence--selected {
+    background-color: #a562c7;
+    border-radius: 60px;
+    border-radius: 60px;
+    background: #0c0c1a;
+    box-shadow: inset 15px 15px 14px #05050c,
+                inset -15px -15px 14px #131328;
+    color: #b11e80;
+}
+
+.evidence--disabled {
+    background-color: red;
+    z-index: 500;
+    opacity: 20%;
 }

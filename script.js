@@ -18,6 +18,15 @@ const Ghosts = [
 
 ];
 
+const disables = [
+    {name:"EMF",target:"Orb"},
+    {name:"Orb",target:"EMF"},
+    {name:"Freezing",target:"SpiritBox"},
+    {name:"SpiritBox",target:"Freezing"},
+    {name:"Writing",target:"Dots"},
+    {name:"Dots",target:"Writing"},
+]
+
 let validGhosts = [];
 let selectedEvidence = [];
 
@@ -27,6 +36,11 @@ function evidenceFilter(evid) {
     } else if(selectedEvidence.includes(evid)){
         selectedEvidence = selectedEvidence.filter(piece => piece != evid);
     }
+    disables.forEach(ev => {
+        if(ev.name == evid) {
+            document.getElementById(ev.target).classList.toggle("evidence--disabled");
+        }
+    });
     calculateList(validGhosts); 
 }
 
@@ -57,6 +71,11 @@ function calculateList(currentList) {
 
 }
 
+
+function disableButton(btn) {
+    btn.disabled = true;
+}
+
 function populateList(currentList) {
     document.getElementById("ghostList").innerHTML = "Ghosts: ";
     currentList.forEach(Ghost => {
@@ -68,11 +87,13 @@ window.addEventListener('load', () => {
     let evidences = document.querySelectorAll("div.evidence");
     evidences.forEach(ev => {
         ev.addEventListener('click', event => {
-            if(document.querySelectorAll("div.evidence--selected").length < 3 || ev.className == "evidence evidence--selected") {
-                ev.classList.toggle('evidence--selected');
+            if(ev.className != "evidence evidence--disabled") {
+                if((document.querySelectorAll("div.evidence--selected").length < 3 || ev.className == "evidence evidence--selected")) {
+                    ev.classList.toggle('evidence--selected');
+                }
             }
-            console.log(document.querySelectorAll("div.evidence--selected").length);
-          });
-    });
-    populateList(Ghosts);
+        }
+        )});
+        populateList(Ghosts);
+
 })
