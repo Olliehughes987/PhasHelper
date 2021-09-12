@@ -68,12 +68,13 @@ function calculateList(currentList) {
             populateList(currentList);
             break;
     }
-
 }
 
 
-function disableButton(btn) {
-    btn.disabled = true;
+function toggleButton(btnList) {
+    for(let i = 0; i<btnList.length;i++) {
+        btnList[i].classList.toggle("evidence--disabled");
+    }
 }
 
 function populateList(currentList) {
@@ -91,7 +92,15 @@ window.addEventListener('load', () => {
                 if((document.querySelectorAll("li.evidence--selected").length < 3 || ev.className == "evidence evidence--selected")) {
                     ev.classList.toggle('evidence--selected');
                 }
-            }
+                if(selectedEvidence.length == 3) {
+                    unselectedEvidence = document.getElementsByClassName("evidence");
+                    filteredUnselectedEvidence = Array.from(unselectedEvidence).filter(evi => (evi.className != "evidence evidence--selected") && (evi.className != "evidence evidence--disabled"));
+                    toggleButton(filteredUnselectedEvidence);
+                } else if (selectedEvidence.length < 3) {
+                    document.getElementById("Fingerprints").className = "evidence";
+                    calculateList(validGhosts);
+                }
+            } 
         }
         )});
         populateList(Ghosts);
