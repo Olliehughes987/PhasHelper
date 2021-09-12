@@ -1,78 +1,60 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html class="dark">
   <head>
     <meta charset="utf-8">
     <title>Phasmophobia Helper</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+          rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <main>
-      <div class="container">
-        <h1>Phasmophobia Helper</h1>
+
+    <div class="theme-toggle-container">
+      <div id="themeToggle"
+           class="material-icons-round"
+           onclick="document.documentElement.classList.toggle('dark')">
       </div>
-      <div class="container">
-        <div id="EMF" class="evidence" onclick="evidenceFilter('EMF')">
-          <img src="images/emfReader.png">
-          <div class="content">
-            <h2>EMF Level 5</h2>
-            <p>5 Reading on EMF reader</p>
-          </div>
-        </div>
+    </div>
 
-        <div id="SpiritBox" class="evidence" onclick="evidenceFilter('SpiritBox')">
-          <img src="images/spiritbox.png">
-          <div class="content">
-            <h2>Spirit Box</h2>
-            <p>Response from ghost</p>
-          </div>
-        </div>
+    <h1>Phasmophobia Helper</h1>
 
-        <div id="Writing" class="evidence" onclick="evidenceFilter('Writing')">
-          <img src="images/ghostWriting.png">
-          <div class="content">
-            <h2>Ghost Writing</h2>
-            <p>Writing inside the book</p>
-          </div>
-        </div>
-
-        <div id="Orb" class="evidence" onclick="evidenceFilter('Orb')">
-          <img src="images/orbs.png">
-          <div class="content">
-            <h2>Ghost Orbs</h2>
-            <p>Orbs visible on camera</p>
-          </div>
-        </div>
-
-        <div id="Fingerprints" class="evidence" onclick="evidenceFilter('Fingerprints')">
-          <img src="images/fingerprint.png">
-          <div class="content">
-            <h2>Fingerprints</h2>
-            <p>Finger/handprint found</p>
-          </div>
-        </div>
-
-        <div id="Freezing" class="evidence" onclick="evidenceFilter('Freezing')">
-          <img src="images/tempGun.png">
-          <div class="content">
-            <h2>Freezing Temps</h2>
-            <p>Temp goes below 3 degrees</p>
-          </div>
-        </div>
-
-        <div id="Dots" class="evidence" onclick="evidenceFilter('Dots')">
-          <img src="images/dots.svg">
-          <div class="content">
-            <h2>D.O.T.S projector</h2>
-            <p>Ghost visible during D.O.T.S</p>
-          </div>
-        </div>
-      </div>
-      <div class="Container">
-        <p id="ghostList"></p>
-      </div>
-    </main>
+    <ul class="evidence-list">
+      <li class="evidence" id="Dots" onclick="evidenceFilter('Dots')">
+        <span class="evidence__icon material-icons-round">blur_on</span>
+        D.O.T.S Projector
+      </li>
+      <li class="evidence" id="EMF" onclick="evidenceFilter('EMF')">
+        <span class="evidence__icon material-icons-round">sensors</span>
+        EMF Level 5
+      </li>
+      <li class="evidence" id="Fingerprints" onclick="evidenceFilter('Fingerprints')">
+        <span class="evidence__icon material-icons-round">fingerprint</span>
+        Fingerprints
+      </li>
+      <li class="evidence" id="Freezing" onclick="evidenceFilter('Freezing')">
+        <span class="evidence__icon material-icons-round">thermostat</span>
+        Freezing Temperatures
+      </li>
+      <li class="evidence" id="Orb" onclick="evidenceFilter('Orb')" aria-disabled="true">
+        <span class="evidence__icon material-icons-round">scatter_plot</span>
+        Ghost Orbs
+      </li>
+      <li class="evidence" id="Writing" onclick="evidenceFilter('Writing')">
+        <span class="evidence__icon material-icons-round">history_edu</span>
+        Ghost Writing
+      </li>
+      <li class="evidence" id="SpiritBox" onclick="evidenceFilter('SpiritBox')" aria-disabled="true">
+        <span class="evidence__icon material-icons-round">radio</span>
+        Spirit Box
+      </li>
+    </ul>
+    <p id="ghostList">Ghosts: </p>
     <script src="script.js"></script>
   </body>
 </html>

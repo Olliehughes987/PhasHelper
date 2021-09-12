@@ -84,11 +84,11 @@ function populateList(currentList) {
 }
 
 window.addEventListener('load', () => {
-    let evidences = document.querySelectorAll("div.evidence");
+    let evidences = document.querySelectorAll("li.evidence");
     evidences.forEach(ev => {
         ev.addEventListener('click', event => {
             if(ev.className != "evidence evidence--disabled") {
-                if((document.querySelectorAll("div.evidence--selected").length < 3 || ev.className == "evidence evidence--selected")) {
+                if((document.querySelectorAll("li.evidence--selected").length < 3 || ev.className == "evidence evidence--selected")) {
                     ev.classList.toggle('evidence--selected');
                 }
             }

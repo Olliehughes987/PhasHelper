@@ -45,7 +45,7 @@
   ;
 }
 
-.evidence--yes, .evidence--no {
+.evidence--selected, .evidence--no {
   border: .15em solid var(--evidence-faded-highlight-colour);
   box-shadow:
     inset .5em .5em 2em
@@ -59,7 +59,7 @@
   ;
 }
 
-.evidence--yes {
+.evidence--selected {
   --evidence-highlight-colour: var(--green);
   --evidence-faded-highlight-colour: var(--faded-green);
 }
@@ -69,7 +69,7 @@
   --evidence-faded-highlight-colour: var(--faded-red);
 }
 
-.evidence--locked {
+.evidence--disabled {
   pointer-events: none;
   opacity: .3;
 }
