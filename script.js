@@ -38,7 +38,7 @@ function evidenceFilter(evid) {
     }
     disables.forEach(ev => {
         if(ev.name == evid) {
-            document.getElementById(ev.target).classList.toggle("evidence--disabled");
+            document.getElementById(ev.target).classList.toggle("evidence--no");
         }
     });
     calculateList(validGhosts); 
@@ -94,11 +94,13 @@ window.addEventListener('load', () => {
                 }
                 if(selectedEvidence.length == 3) {
                     unselectedEvidence = document.getElementsByClassName("evidence");
-                    filteredUnselectedEvidence = Array.from(unselectedEvidence).filter(evi => (evi.className != "evidence evidence--selected") && (evi.className != "evidence evidence--disabled"));
+                    filteredUnselectedEvidence = Array.from(unselectedEvidence).filter(evi => (evi.className != "evidence evidence--selected") && (evi.className != "evidence evidence--no"));
                     toggleButton(filteredUnselectedEvidence);
-                } else if (selectedEvidence.length < 3) {
-                    document.getElementById("Fingerprints").className = "evidence";
-                    calculateList(validGhosts);
+                } else {
+                    disabledButtons = document.getElementsByClassName("evidence evidence--disabled");
+                    arrDisabledButtons = Array.from(disabledButtons);
+                    toggleButton(arrDisabledButtons);
+                    //calculateList(validGhosts);
                 }
             } 
         }

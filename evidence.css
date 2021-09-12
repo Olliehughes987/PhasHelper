@@ -65,6 +65,7 @@
 }
 
 .evidence--no {
+  pointer-events: none;
   --evidence-highlight-colour: var(--red);
   --evidence-faded-highlight-colour: var(--faded-red);
 }
