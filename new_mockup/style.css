@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+@import "evidence.css";
+
+:root {
+  --base-colour: #d5d8db;
+  --text-colour: black;
+
+  --dark-shadow-colour: rgba(0, 0, 0, .425);
+  --light-shadow-colour: white;
+  --heading-shadow-colour: var(--light-shadow-colour);
+
+  --dark-shadow-spread-offset: -.25em;
+  --light-shadow-spread-offset: .125em;
+
+  --white: white;
+  --green: #8f8;
+  --faded-green: #f8fff8;
+  --red: #f88;
+  --faded-red: #fff8f8;
+}
+
+.dark {
+  --base-colour: #333639;
+  --text-colour: white;
+
+  --dark-shadow-colour: rgba(0, 0, 0, .725);
+  --light-shadow-colour: rgba(255, 255, 255, .5);
+  --heading-shadow-colour: var(--dark-shadow-colour);
+
+  --dark-shadow-spread-offset: -.125em;
+  --light-shadow-spread-offset: -.5em;
+}
+
+html {
+  font-size: 4.545vw; /* 100vw / (16 + 1.5*2 + 1.5*2) == 100vw / 22 */
+}
+
+html, body {
+  background: var(--base-colour);
+}
+
+body {
+  max-width: 60rem;
+  margin: 0 auto;
+  font-family: Roboto;
+  color: var(--text-colour);
+}
+
+.theme-toggle-container {
+  height: 0;
+  display: flex;
+  justify-content: flex-end;
+  overflow: visible;
+}
+
+#themeToggle {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+#themeToggle::before {
+  content: "light_mode";
+}
+
+.dark #themeToggle::before {
+  content: "dark_mode";
+}
+
+h1 {
+  padding: .5rem 1.5rem 0;
+  text-align: center;
+  font-family: "Kiwi Maru";
+  text-shadow: 0 0 .5em var(--heading-shadow-colour);
+}
+
+@media screen and (min-width: 352px) {
+  html { font-size: 100% }
+}
