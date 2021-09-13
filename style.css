@@ -43,6 +43,7 @@ html, body {
 body {
   max-width: 60rem;
   margin: 0 auto;
+  padding: 0 1.5em 1.5em;
   font-family: Roboto;
   color: var(--text-colour);
 }

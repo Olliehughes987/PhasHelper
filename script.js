@@ -73,7 +73,7 @@ function calculateList(currentList) {
 
 function toggleButton(btnList) {
     for(let i = 0; i<btnList.length;i++) {
-        btnList[i].classList.toggle("evidence--disabled");
+        btnList[i].classList.toggle("evidence--no");
     }
 }
 
@@ -88,19 +88,28 @@ window.addEventListener('load', () => {
     let evidences = document.querySelectorAll("li.evidence");
     evidences.forEach(ev => {
         ev.addEventListener('click', event => {
-            if(ev.className != "evidence evidence--disabled") {
+            if(ev.className != "evidence evidence--no") {
                 if((document.querySelectorAll("li.evidence--selected").length < 3 || ev.className == "evidence evidence--selected")) {
                     ev.classList.toggle('evidence--selected');
                 }
-                if(selectedEvidence.length == 3) {
-                    unselectedEvidence = document.getElementsByClassName("evidence");
-                    filteredUnselectedEvidence = Array.from(unselectedEvidence).filter(evi => (evi.className != "evidence evidence--selected") && (evi.className != "evidence evidence--no"));
-                    toggleButton(filteredUnselectedEvidence);
-                } else {
-                    disabledButtons = document.getElementsByClassName("evidence evidence--disabled");
-                    arrDisabledButtons = Array.from(disabledButtons);
-                    toggleButton(arrDisabledButtons);
-                    //calculateList(validGhosts);
+
+                switch (selectedEvidence.length) {
+                    case 3:
+                        unselectedEvidence = document.getElementsByClassName("evidence");
+                        filteredUnselectedEvidence = Array.from(unselectedEvidence).filter(evi => (evi.className != "evidence evidence--selected") && (evi.className != "evidence evidence--no"));
+                        toggleButton(filteredUnselectedEvidence);
+                        break;
+                    case 2:
+                        const pairedDisabledButtons = disables
+                          .filter(pair => selectedEvidence.includes(pair.name))
+                          .map(pair => pair.target);
+                        const unpairedDisabledButtons = Array.prototype.filter.call(
+                          document.getElementsByClassName('evidence--no'),
+                          button => !pairedDisabledButtons.includes(button.id)
+                        );
+                        toggleButton(unpairedDisabledButtons);
+                        //calculateList(validGhosts);
+                        break;
                 }
             } 
         }
