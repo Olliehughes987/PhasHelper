@@ -31,6 +31,10 @@ let validGhosts = [];
 let selectedEvidence = [];
 
 function evidenceFilter(evid) {
+    if (document.getElementById(evid).classList.contains('evidence--no')) {
+      return;
+    }
+
     if(selectedEvidence.length < 3 && !selectedEvidence.includes(evid)) {
         selectedEvidence.push(evid);
     } else if(selectedEvidence.includes(evid)){

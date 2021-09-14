@@ -16,49 +16,52 @@
   </head>
   <body>
 
-    <div class="theme-toggle-container">
+    <div class="settings-toggle-container">
       <div id="themeToggle"
-           class="material-icons-round"
-           onclick="document.documentElement.classList.toggle('dark')">
-      </div>
+           class="settings-toggle settings-toggle--toggled material-icons-round"
+           aria-hidden="true"></div>
+      <div id="compactToggle"
+           class="settings-toggle material-icons-round"
+           aria-hidden="true"></div>
     </div>
 
     <h1>Phasmophobia Helper</h1>
 
     <ul class="evidence-list">
       <li class="evidence" id="Dots" onclick="evidenceFilter('Dots')">
-        <span class="evidence__icon material-icons-round">blur_on</span>
-        D.O.T.S Projector
+        <span class="evidence__icon material-icons-round" aria-hidden="true">blur_on</span>
+        <span class="evidence__name">D.O.T.S Projector</span>
       </li>
       <li class="evidence" id="EMF" onclick="evidenceFilter('EMF')">
-        <span class="evidence__icon material-icons-round">sensors</span>
-        EMF Level 5
+        <span class="evidence__icon material-icons-round" aria-hidden="true">sensors</span>
+        <span class="evidence__name">EMF Level 5</span>
       </li>
       <li class="evidence" id="Fingerprints" onclick="evidenceFilter('Fingerprints')">
-        <span class="evidence__icon material-icons-round">fingerprint</span>
-        Fingerprints
+        <span class="evidence__icon material-icons-round" aria-hidden="true">fingerprint</span>
+        <span class="evidence__name">Fingerprints</span>
       </li>
       <li class="evidence" id="Freezing" onclick="evidenceFilter('Freezing')">
-        <span class="evidence__icon material-icons-round">thermostat</span>
-        Freezing Temperatures
+        <span class="evidence__icon material-icons-round" aria-hidden="true">thermostat</span>
+        <span class="evidence__name">Freezing Temperatures</span>
       </li>
       <li class="evidence" id="Orb" onclick="evidenceFilter('Orb')">
-        <span class="evidence__icon material-icons-round">scatter_plot</span>
-        Ghost Orbs
+        <span class="evidence__icon material-icons-round" aria-hidden="true">scatter_plot</span>
+        <span class="evidence__name">Ghost Orbs</span>
       </li>
       <li class="evidence" id="Writing" onclick="evidenceFilter('Writing')">
-        <span class="evidence__icon material-icons-round">history_edu</span>
-        Ghost Writing
+        <span class="evidence__icon material-icons-round" aria-hidden="true">history_edu</span>
+        <span class="evidence__name">Ghost Writing</span>
       </li>
       <li class="evidence" id="SpiritBox" onclick="evidenceFilter('SpiritBox')">
-        <span class="evidence__icon material-icons-round">radio</span>
-        Spirit Box
+        <span class="evidence__icon material-icons-round" aria-hidden="true">radio</span>
+        <span class="evidence__name">Spirit Box</span>
       </li>
     </ul>
 
     <p id="ghostList">Ghosts: </p>
 
     <script src="script.js"></script>
+    <script src="settings-toggles.js"></script>
 
   </body>
 </html>

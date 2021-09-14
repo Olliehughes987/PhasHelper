@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import "evidence.css";
+@import "settings-toggles.css";
 
 :root {
   --base-colour: #d5d8db;
@@ -33,7 +34,8 @@
 }
 
 html {
-  font-size: 4.545vw; /* 100vw / (16 + 1.5*2 + 1.5*2) == 100vw / 22 */
+  /* 100vw / (5rem*3 + 1.25rem*2*3 + 1.25rem) == 100 / 23.75 */
+  font-size: 4.2105vw;
 }
 
 html, body {
@@ -41,47 +43,23 @@ html, body {
 }
 
 body {
-  max-width: 60rem;
+  width: max-content;
+  max-width: 74rem;
+  max-width: min(74rem, 100%); /* (16rem + 1.25rem*2)*4 */
   margin: 0 auto;
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 1.25rem 1.5rem;
+  box-sizing: border-box;
   font-family: Roboto;
   color: var(--text-colour);
 }
 
-.theme-toggle-container {
-  height: 0;
-  margin: 0 -1.5rem;
-  display: flex;
-  justify-content: flex-end;
-  overflow: visible;
-}
-
-#themeToggle {
-  width: 2.25em;
-  height: 2.25em;
-  font-size: 1.25em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  cursor: pointer;
-}
-
-#themeToggle::before {
-  content: "light_mode";
-}
-
-.dark #themeToggle::before {
-  content: "dark_mode";
-}
-
 h1 {
-  padding: .5rem 1.5rem 0;
+  padding: .5rem 1.8rem 0;
   text-align: center;
   font-family: "Kiwi Maru";
   text-shadow: 0 0 .5em var(--heading-shadow-colour);
 }
 
-@media screen and (min-width: 352px) {
+@media screen and (min-width: 380px) { /* 16px * 23.75rem == 380 */
   html { font-size: 100% }
 }
