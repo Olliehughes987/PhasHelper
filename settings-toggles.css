@@ -2,7 +2,7 @@
 
 .settings-toggle-container {
   height: 0;
-  margin: 0 -1.5rem;
+  margin: 0 -1.25em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -13,7 +13,7 @@
 .settings-toggle {
   width: 1em;
   flex: 0 0 1em;
-  padding: .3125em .625em;
+  padding: .45em .9em;
   font-size: 1.25em;
   display: flex;
   justify-content: center;
@@ -23,11 +23,11 @@
 }
 
 .settings-toggle:first-child {
-  padding-top: .625em;
+  padding-top: .9em;
 }
 
 .settings-toggle:last-child {
-  padding-bottom: .625em;
+  padding-bottom: .9em;
 }
 
 #themeToggle::before {

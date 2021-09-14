@@ -1,11 +1,12 @@
 (() => {
 
-  function initialiseToggle(element, listener) {
-    element.addEventListener('click', (event) => {
-      event.target.classList.toggle('settings-toggle--toggled');
-    });
+  function defaultListener(event) {
+    event.target.classList.toggle('settings-toggle--toggled');
+  }
 
-    element.addEventListener('click', listener);
+  function initialiseToggle(element, bespokeListener) {
+    element.addEventListener('click', defaultListener);
+    element.addEventListener('click', bespokeListener);
   }
 
   initialiseToggle(themeToggle, () => {
