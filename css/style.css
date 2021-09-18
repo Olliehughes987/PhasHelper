@@ -63,7 +63,6 @@ h1 {
 #ghostList {
   display: flex;
   flex-direction: column;
-  overflow-wrap: normal;
 }
 
 .ghostDisplay {
