@@ -60,6 +60,42 @@ h1 {
   text-shadow: 0 0 .5em var(--heading-shadow-colour);
 }
 
-@media screen and (min-width: 380px) { /* 16px * 23.75rem == 380 */
+#ghostList {
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: normal;
+}
+
+.ghostDisplay {
+  margin: 1rem;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  height: 4rem;
+  width: 7rem;
+  overflow: hidden;
+}
+
+.ghostDisplay:hover {
+  width: 15rem;
+  height: 15rem;
+}
+
+@media screen and (min-width: 480px) { /* 16px * 23.75rem == 380 */
   html { font-size: 100% }
+
+
+  #ghostList {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1000px) { /* 16px * 23.75rem == 380 */
+  html { font-size: 100% }
+
+  #ghostList {
+    flex-direction: row;
+  }
+
 }
