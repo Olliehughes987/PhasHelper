@@ -94,11 +94,5 @@
         "evidence":["Dots","Orb","Freezing"],
         "strength":"Yurei’s have been known to have a stronger effect on people’s sanity.",
         "weakness":"Smudging the Yurei’s room will cause it to not wander around the location for a long time."
-    },
-    {
-        "name":"Gareth",
-        "evidence":["Dots","Orb","Freezing"],
-        "strength":"Yurei’s have been known to have a stronger effect on people’s sanity.",
-        "weakness":"Smudging the Yurei’s room will cause it to not wander around the location for a long time."
     }
 ]
