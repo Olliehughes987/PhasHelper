@@ -70,10 +70,23 @@ h1 {
   margin: 1rem;
   border-style: solid;
   border-color: black;
+  border-radius: 2rem;
   text-align: center;
   height: 4rem;
   width: 7rem;
   overflow: hidden;
+}
+
+.ghostDisplay #Weakness {
+  color: green;
+}
+.ghostDisplay #Strength {
+  color: #f72a30;
+}
+
+#ollie {
+  width: 10000rem;
+  height: 5000rem;
 }
 
 .ghostDisplay:hover {
@@ -94,8 +107,5 @@ h1 {
 @media screen and (min-width: 1000px) { /* 16px * 23.75rem == 380 */
   html { font-size: 100% }
 
-  #ghostList {
-    flex-direction: row;
-  }
 
 }

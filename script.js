@@ -128,6 +128,9 @@ function populateList(currentList) {
 
         div.setAttribute('id',Ghost.name);
         div.setAttribute('class','ghostDisplay');
+        strength.setAttribute('id','Strength');
+        weakness.setAttribute('id','Weakness');
+
         div.appendChild(gName);
         div.appendChild(strength);
         div.appendChild(weakness);
