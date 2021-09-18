@@ -73,7 +73,7 @@ h1 {
   border-radius: 2rem;
   text-align: center;
   height: 4rem;
-  width: 7rem;
+  width: 9rem;
   overflow: hidden;
 }
 
@@ -84,9 +84,9 @@ h1 {
   color: #f72a30;
 }
 
-#ollie {
-  width: 10000rem;
-  height: 5000rem;
+.footer {
+  bottom: 0;
+  position: fixed;
 }
 
 .ghostDisplay:hover {
