@@ -1,3 +1,4 @@
+// Need to store this externally in a seperate file
 const Ghosts = [
     {
         name:"Banshee",
@@ -81,6 +82,7 @@ const Ghosts = [
         weakness:"Smudging the Yurei’s room will cause it to not wander around the location for a long time."},
 ];
 
+// Stores each evidence and what it disables due to mutual exclusion
 const disables = [
     {name:"EMF",target:"Orb"},
     {name:"Orb",target:"EMF"},
@@ -103,6 +105,7 @@ function evidenceFilter(evid) {
     } else if(selectedEvidence.includes(evid)){
         selectedEvidence = selectedEvidence.filter(piece => piece != evid);
     }
+    // iterates through each evidence selected, and disables any mutual exclusions
     disables.forEach(ev => {
         if(ev.name == evid) {
             document.getElementById(ev.target).classList.toggle("evidence--no");
