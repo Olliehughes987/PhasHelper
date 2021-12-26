@@ -3,10 +3,6 @@ let Ghosts;
 
 // Stores each evidence and what it disables due to mutual exclusion
 const disables = [
-    {name:"EMF",target:"Orb"},
-    {name:"Orb",target:"EMF"},
-    {name:"Freezing",target:"SpiritBox"},
-    {name:"SpiritBox",target:"Freezing"},
     {name:"Writing",target:"Dots"},
     {name:"Dots",target:"Writing"},
 ]
@@ -57,6 +53,11 @@ function calculateList(currentList) {
             populateList(currentList);
             break;
     }
+    if(document.getElementsByClassName('ghostDisplay').length > 0) {
+        document.getElementById("ghostNum").innerHTML = "Ghosts: ";
+    } else if (document.getElementsByClassName('ghostDisplay').length == 0) {
+        document.getElementById("ghostNum").innerHTML = "No valid ghosts";
+    }
 }
 
 
@@ -67,7 +68,7 @@ function toggleButton(btnList) {
 }
 
 function populateList(currentList) {
-    document.getElementById("ghostList").innerHTML = "Ghosts: ";
+    document.getElementById("ghostList").innerHTML = "";
     currentList.forEach(Ghost => {
 
         let div = document.createElement('div');

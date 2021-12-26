@@ -60,9 +60,22 @@ h1 {
   text-shadow: 0 0 .5em var(--heading-shadow-colour);
 }
 
+#ghostArea {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 #ghostList {
   display: flex;
   flex-direction: column;
+}
+
+#ghostNum {
+  font-size: 2rem;
+  padding-left: 40%;
+  padding-right: 40%;
+  max-height: 5rem;
 }
 
 .ghostDisplay {
